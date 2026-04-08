@@ -1,5 +1,14 @@
 # russian-text-quality
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Release](https://img.shields.io/github/v/release/Anic888/russian-text-quality?include_prereleases&sort=semver)](https://github.com/Anic888/russian-text-quality/releases)
+[![Stars](https://img.shields.io/github/stars/Anic888/russian-text-quality?style=flat)](https://github.com/Anic888/russian-text-quality/stargazers)
+[![Issues](https://img.shields.io/github/issues/Anic888/russian-text-quality)](https://github.com/Anic888/russian-text-quality/issues)
+[![Discussions](https://img.shields.io/github/discussions/Anic888/russian-text-quality)](https://github.com/Anic888/russian-text-quality/discussions)
+[![Claude Code skill](https://img.shields.io/badge/Claude_Code-skill-8A2BE2)](https://docs.claude.com/en/docs/claude-code)
+[![i18n](https://img.shields.io/badge/i18n-i18next_|_ICU_|_vue--i18n-blue)](#what-it-checks)
+[![CLDR](https://img.shields.io/badge/CLDR-plural_rules-green)](https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html)
+
 A Claude Code skill that catches Russian-language bugs in code that general linters and LLMs consistently miss: broken pluralization in i18n locale files, case-agreement bugs in string concatenation, terminology drift, transliterated identifiers, and inconsistent language mixing.
 
 **Code-aware, not prose-focused.** If you want a Russian prose/typography reviewer, install [talkstream/ru-text](https://github.com/talkstream/ru-text) alongside this skill — they complement each other.
@@ -153,6 +162,10 @@ New trigger words for check #3, new dictionary entries for check #5, and new exa
 - A PR that risks introducing false positives must include a before/after test run on at least 5 open-source Russian projects.
 
 ---
+
+## Security
+
+See `SECURITY.md` for how to report prompt-injection payloads, malicious dictionary entries, or impersonation attempts on companion tools.
 
 ## License
 

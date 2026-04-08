@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-04-08
+
+Packaging, hygiene, and discoverability pass. No changes to the skill's detection logic or check catalog — v0.1.0 behavior is unchanged.
+
+### Added
+
+- **`SECURITY.md`** — vulnerability reporting policy. Explicitly scopes "security" for a docs-only skill: prompt-injection payloads in content, instructions that could leak data, malicious dictionary/example PRs, typosquatting of companion tools. Reports go through GitHub security advisories.
+- **`.github/ISSUE_TEMPLATE/`** — four YAML issue forms (bug report, new dictionary entry, new trigger word, config). Enforces the CONTRIBUTING.md source-link and false-positive-check requirements at issue creation time. Blank issues disabled; terminology debates and how-to questions routed to Discussions. *(Added via PR #2 shortly after v0.1.0.)*
+- **README badges** — license, release, stars, issues, discussions, Claude Code, i18n frameworks, CLDR. Visual discoverability pass.
+- **Security section in README** pointing to `SECURITY.md`.
+
+### Removed
+
+- **`docs/habr-post-draft.md`** — marketing draft was never meant to ship in the public product repo. The Habr post will be published separately when ready.
+
+### Changed
+
+- CHANGELOG 0.1.0 note rephrased: "verified via manual subagent dispatch" → "verified with manual fixture testing". Same fact, less meta-confessional phrasing.
+
 ## [0.1.0] — 2026-04-07
 
 Initial public release.
@@ -36,7 +55,7 @@ These areas are covered by other tools and are not in scope for this skill:
 - Morphology-based analysis (pymorphy3 integration) → deferred to a future version.
 - i18next v3 (`key_plural` format) → only v4 suffix conventions are supported.
 - Languages other than Russian → out of scope.
-- Automated test suite → deferred to v0.2 (v0.1 was verified via manual subagent dispatch against a buggy fixture).
+- Automated test suite → deferred to v0.2 (v0.1 was verified with manual fixture testing).
 
 ### Known limitations
 
@@ -47,5 +66,6 @@ These areas are covered by other tools and are not in scope for this skill:
 - **Nested ICU plurals** (plural inside select) may be missed by the v1 regex-based parser.
 - **`.claude-plugin/plugin.json`** is intentionally NOT included in v0.1.0 — the plugin manifest schema should be verified against the current Claude Code plugin spec before submission to the Anthropic plugin marketplace.
 
-[Unreleased]: https://github.com/Anic888/russian-text-quality/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/Anic888/russian-text-quality/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/Anic888/russian-text-quality/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/Anic888/russian-text-quality/releases/tag/v0.1.0
