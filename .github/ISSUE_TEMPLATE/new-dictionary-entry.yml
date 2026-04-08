@@ -1,0 +1,71 @@
+name: New transliteration dictionary entry
+description: Add a transliterated Russian token to references/transliteration-dict.yml (check #5).
+title: "[dict] add "
+labels: ["dictionary", "check-5"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for adding a new entry to `references/transliteration-dict.yml` (check #5: transliterated identifiers).
+
+        **Rule zero:** no invented entries. Evidence of real-world use is required. See `CONTRIBUTING.md` → "Adding a transliteration dictionary entry" for the full rules.
+
+        If you want to propose the change as a PR directly, that's also welcome — this issue template is for discussion or when you don't yet know the English equivalent.
+
+  - type: input
+    id: token
+    attributes:
+      label: Transliterated token
+      description: The Latin-letter form as it appears in code. Lowercase.
+      placeholder: "e.g. polzovatel, kolichestvo_tovarov, zagruzka"
+    validations:
+      required: true
+
+  - type: input
+    id: suggestion
+    attributes:
+      label: Suggested English equivalent
+      description: The recommended replacement. If ambiguous, pick the most common domain meaning.
+      placeholder: "e.g. user, product_quantity, loading"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence of real-world use
+      description: |
+        Per CONTRIBUTING.md, at least ONE of:
+        - A GitHub code search hit (link)
+        - A Habr, VC.ru, or Stack Overflow discussion mentioning this token (link)
+        - A real codebase example (describe context; strip sensitive info)
+      placeholder: |
+        Example: "Seen in GitHub code search: https://github.com/search?q=polzovatel+language%3ATypeScript"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      description: Which section of the dictionary does this belong to?
+      options:
+        - Users and auth
+        - Commerce
+        - Content
+        - Operations
+        - Messaging
+        - Data & schema
+        - Documents
+        - Actions (verbs)
+        - Status / state
+        - Misc common
+        - New section (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Ambiguity concerns, alternative suggestions, or reasons this token is worth flagging.

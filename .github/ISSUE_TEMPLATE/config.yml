@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Terminology debates and linguistic judgment calls
+    url: https://github.com/Anic888/russian-text-quality/discussions
+    about: For discussions about term choices, synonym groups, or debatable linguistic rules — open a Discussion instead of an Issue. Issues are for bugs and concrete proposals.
+  - name: How-to questions
+    url: https://github.com/Anic888/russian-text-quality/discussions
+    about: If you're unsure how to use the skill on your project, ask in Discussions.

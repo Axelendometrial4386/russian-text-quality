@@ -1,0 +1,90 @@
+name: Bug report
+description: The skill produced a wrong finding, missed a real bug, or crashed.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Before filing:
+        - If you want to debate *whether* a rule is correct, open a Discussion instead.
+        - If you're adding a new dictionary entry or trigger word, use the specific templates.
+        - For this template: the skill did something *wrong* — false positive, false negative, or crash.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Which check is affected?
+      options:
+        - "#1 Plural structure (i18next / ICU / vue-i18n)"
+        - "#2 Terminology drift"
+        - "#3 Concatenation case bug"
+        - "#4 Language mixing in one file"
+        - "#5 Transliterated identifiers"
+        - Activation logic (skill ran on English-only project, or did not run when it should have)
+        - Output format / report generation
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bug_kind
+    attributes:
+      label: Bug kind
+      options:
+        - False positive (skill flagged something that is actually correct)
+        - False negative (skill missed a real bug)
+        - Wrong severity (e.g. Warning emitted as Error)
+        - Crash / error in the skill itself
+        - Incorrect fix suggestion
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: |
+        Paste the exact file content, key, or code snippet that caused the problem.
+        For locale files, include the full key path and value.
+        For code: include the relevant 5–10 lines.
+      placeholder: |
+        ```json
+        { "cart_one": "1 товар", "cart_other": "{{count}} товаров" }
+        ```
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect the skill to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What did the skill actually do?
+      description: Quote the finding (if there was one) or describe what happened.
+    validations:
+      required: true
+
+  - type: input
+    id: framework
+    attributes:
+      label: i18n framework (if relevant)
+      placeholder: "e.g. i18next 23.5 / react-intl 6 / vue-i18n 9 / none"
+
+  - type: input
+    id: claude_version
+    attributes:
+      label: Claude Code version
+      placeholder: "e.g. Claude Code CLI 1.x"
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, repo link (if public), related issues.
