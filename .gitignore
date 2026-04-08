@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# User-local glossary (this file is a template; users create their own at .claude/russian-glossary.yml)
+# Keep the example template tracked, but if someone creates their own copy in the repo root, don't commit it
+/.claude/russian-glossary.yml
+
+# Scratch and temporary files
+*.tmp
+*.bak
+*.orig
+/tmp/
+/scratch/
+
+# Node / test runners (reserved for v0.2)
+node_modules/
+coverage/
+*.log
+npm-debug.log*
+
+# Python (reserved for possible pymorphy3 integration)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/

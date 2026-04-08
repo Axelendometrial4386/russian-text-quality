@@ -1,0 +1,171 @@
+# Transliteration dictionary for check #5 — transliterated identifiers.
+#
+# Low-confidence heuristic. Always emits Info severity, never Warning or Error.
+# Detection fires only when all three tiers match: dictionary + phonotactic + file has Russian content.
+#
+# Source note: seeded from common Russian vocabulary in e-commerce / CRM / admin-panel domains
+# where transliterated naming is most common in private code. The Phase 1 research pass could not
+# find live GitHub permalinks for transliterated identifiers — that category has thin public
+# evidence but is widely discussed as an antipattern in Russian dev communities (e.g. Habr QnA
+# https://qna.habr.com/q/148717). Treat this dictionary as suggestion-only.
+#
+# Format:
+#   <transliterated_token>: <suggested_english_equivalent>
+#
+# Tokens are matched case-insensitively against identifier parts after splitting on camelCase
+# and snake_case boundaries. A match on ANY part triggers tier-1.
+
+# ───── Users and auth ─────
+polzovatel: user
+polzovateli: users
+klient: client
+klienty: clients
+sotrudnik: employee
+sotrudniki: employees
+admin: admin                # already English, exclude from trigger but keep for reference
+administrator: administrator
+vhod: login
+vyhod: logout
+parol: password
+registratsiya: registration
+avtorizatsiya: authorization
+akkaunt: account
+profil: profile
+
+# ───── Commerce ─────
+tovar: product
+tovary: products
+tovarov: products            # genitive plural of товар, common in compound identifiers
+tovar_nazvanie: product_name
+nazvanie: name               # common as a standalone field name
+kolichestvo: quantity
+kolichestvo_tovarov: product_quantity
+cena: price
+skidka: discount
+zakaz: order
+zakazy: orders
+zakaz_nomer: order_number
+korzina: cart
+oplata: payment
+dostavka: delivery
+sklad: warehouse
+postavshchik: supplier
+
+# ───── Content ─────
+stranitsa: page
+glavnaya: home
+razdel: section
+podrazdel: subsection
+kategoriya: category
+podkategoriya: subcategory
+stat_ya: article
+novost: news
+novosti: news
+kommentarii: comments
+otzyv: review
+reyting: rating
+galereya: gallery
+foto: photo
+video: video                # already English
+
+# ───── Operations ─────
+zagruzka: loading
+vygruzka: upload
+obrabotka: processing
+sohranenie: saving
+udalenie: deletion
+izmenenie: editing
+poisk: search
+filtr: filter
+sortirovka: sorting
+nastroyki: settings
+nastroyka: setting
+konfiguratsiya: configuration
+
+# ───── Messaging ─────
+soobschenie: message
+soobscheniya: messages
+otpravit: send
+poluchit: receive
+otpravka: sending
+pisma: letters
+pismo: letter
+uvedomlenie: notification
+uvedomleniya: notifications
+rassylka: mailing
+
+# ───── Data & schema ─────
+dannye: data
+tablitsa: table
+zapis: record
+zapisi: records
+stroka: row
+stolbets: column
+pole: field
+znachenie: value
+tip: type                   # already English
+spisok: list
+massiv: array               # already English
+obyekt: object              # already English
+
+# ───── Documents ─────
+dokument: document
+dokumenty: documents
+otchet: report
+otchety: reports
+dogovor: contract
+schet: invoice
+spravka: certificate
+bланk: form
+shablon: template
+
+# ───── Actions (verbs) ─────
+sozdat: create
+izmenit: edit
+udalit: delete
+sohranit: save
+otmenit: cancel
+podtverdit: confirm
+proverit: check
+poluchit_danye: get_data
+otpravit_zapros: send_request
+
+# ───── Status / state ─────
+status: status              # already English
+sostoyanie: state
+aktivny: active
+neaktivny: inactive
+oshibka: error
+oshibki: errors
+preduprezhdenie: warning
+uspeh: success
+
+# ───── Misc common ─────
+adres: address
+telefon: phone
+pochta: email
+imya: name
+familiya: surname
+otchestvo: patronymic
+data: date                  # already English
+vremya: time
+nachalo: start
+konets: end
+spisok_zakazov: order_list
+novyy_zakaz: new_order
+staryy_zakaz: old_order
+zadacha: task
+zadachi: tasks
+proekt: project
+proekty: projects
+komanda: team
+organizatsiya: organization
+kompaniya: company
+
+# Phonotactic patterns (reference only; actual detection uses regex in the skill logic):
+#   /shch/i      — щ
+#   /[bdgklmnprstvz]zh/i  — ж
+#   /^ya[a-z]/i  — я word-initial
+#   /^yu[a-z]/i  — ю
+#   /^yo[a-z]/i  — ё
+#   /kh[aeiou]/i — х + vowel
